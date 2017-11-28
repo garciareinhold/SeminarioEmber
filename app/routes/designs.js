@@ -34,25 +34,25 @@ export default Route.extend({
 
    revealEdit(data){
      this.controllerFor('designs').set('edit', true);
-     this.controllerFor('designs').set('fila', Object.assign({}, data));
+     this.controllerFor('designs').set('fila', data);
    },
 
    update(){
      let newFila = this.controllerFor('designs').get('fila');
-     this.get('ajax').put('http://web-unicen.herokuapp.com/api/thing/'+newFila._id, {
+     this.get('ajax').put('http://web-unicen.herokuapp.com/api/thing/'+newFila._id,{
         data: {
           group: 12 ,
           thing:{
-            Medidas: newFila.Medidas,
-            Talle_S: newFila.Talle_S,
-            Talle_M: newFila.Talle_M,
-            Talle_L: newFila.Talle_L,
-            Talle_XL: newFila.Talle_XL
+            Medidas: newFila.thing.Medidas,
+            Talle_S: newFila.thing.Talle_S,
+            Talle_M: newFila.thing.Talle_M,
+            Talle_L: newFila.thing.Talle_L,
+            Talle_XL: newFila.thing.Talle_XL 
           }
         }
       });
-     this.controllerFor('designs').set('edit', false);
-     this.refresh();
+      this.controllerFor('designs').set('edit', false);
+      this.refresh();
    }
  }
 
