@@ -1,5 +1,40 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<header>
+    <figure class="container-fluid">
+      <img src="images/marca_pagina.jpg"  alt="logo_pagina" id="logo_pagina">
+    </figure>
+</header>
+<nav class="navbar navbar-inverse">
+  <section class="container-fluid">
+    <section class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </section>
+    <section class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>{{#link-to 'home'}}  Home {{/link-to}}</li>
+        <li>{{#link-to 'contacto'}}  Contacto {{/link-to}}</li>
+        <li>{{#link-to 'pedidos'}}  Pedidos {{/link-to}}</li>
+        <li>{{#link-to 'designs'}}  Diseños {{/link-to}}</li>
+      </ul>
+    </section>
+  </section>
+</nav>
+
 
 {{outlet}}
+
+<footer class="container-fluid">
+  <section class="row">
+    <section class="hidden-xs col-sm-6 col-md-6">
+      <p class="invitacion-redes-sociales">Seguínos en nuestras redes sociales!</p>
+    </section>
+    <section class="col-xs-12 col-sm-6 col-md-6">
+      <a href="https://www.facebook.com/fueelperro/?fref=ts" target="blank"><span class= "redes_sociales"><i class="fa fa-facebook fa-4x" ></i></span></a>
+      <a href="https://www.instagram.com/fueelperro/?hl=es" target="blank"><span class= "redes_sociales"><i class="fa fa-instagram fa-4x" ></i></span></a>
+    </section>
+  </section>
+</footer>

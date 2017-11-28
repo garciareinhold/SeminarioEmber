@@ -1,0 +1,154 @@
+<article class="container-fluid" >
+  <section class="row container-fluid">
+    <section class="col-md-4  col-xs-12">
+      <figure>
+        <img src="images/delantal1.png" class="img-circle imagenes-disenio" alt="Modelo 1">
+        <figcaption>
+          <ul>Modelo A
+            <li>Correas cruzadas</li>
+            <li>Gabardina Negra</li>
+            <li>Pespuntes a contracolor</li>
+          </ul>
+        </figcaption>
+      </figure>
+    </section>
+    <section class="col-md-4  col-xs-12">
+      <figure>
+        <img src="images/delantal1.png" class="img-circle imagenes-disenio" alt="Modelo 2">
+        <figcaption>
+          <ul>Modelo B
+            <li>Gabardina Negra</li>
+            <li>Ribeteado con Simil Cuero</li>
+            <li>Correas cruzadas de cuero y gabardina</li>
+          </ul>
+        </figcaption>
+      </figure>
+    </section>
+    <section class="col-md-4  col-xs-12">
+      <figure>
+        <img src="images/delantal1.png" class="img-circle imagenes-disenio" alt="Modelo 4">
+        <figcaption>
+          <ul>Modelo D
+            <li>Gabardina marron oscuro</li>
+            <li>Ribete de Simil cuero</li>
+            <li>Correa cuero superior, desmontable</li>
+          </ul>
+        </figcaption>
+      </figure>
+    </section>
+  <section class="row">
+    <section class="col-md-4  col-xs-12">
+      <figure>
+        <img src="images/delantal1.png" class="img-circle imagenes-disenio" alt="Modelo 5">
+        <figcaption>
+          <ul>Modelo E
+            <li>Jean negro</li>
+            <li>Ribeteado correa cuero superior</li>
+            <li>Correas regulables y desmontables</li>
+          </ul>
+        </figcaption>
+      </figure>
+    </section>
+    <section class="col-md-4  col-xs-12">
+      <figure>
+        <img src="images/delantal1.png" class="img-circle imagenes-disenio" alt="Modelo 9">
+        <figcaption>
+          <ul>Modelo I
+            <li>Denim con correa simil cuero</li>
+            <li>Últimos en stock!!</li>
+          </ul>
+        </figcaption>
+      </figure>
+    </section>
+    <section class="col-md-4  col-xs-12">
+      <figure>
+        <img src="images/delantal1.png" class="img-circle imagenes-disenio" alt="Modelo 10">
+        <figcaption>
+          <ul>Modelo J
+            <li>Gabardina color crema</li>
+            <li>Parches bordados</li>
+            <li>Cómoda correa de tela</li>
+          </ul>
+        </figcaption>
+      </figure>
+    </section>
+  </section>
+</section>
+<section class="tabla container-fluid">
+  <h1 class="titulo-tabla">Tabla de Talles y Medidas</h1>
+  <section class="row">
+    <section class="col-md-3 col-sm-3 hide-xs">
+      <figure>
+        <img class="maniqui" src="images/maniqui.jpg" alt="Maniqui con contornos">
+      </figure>
+    </section>
+    <section class="col-md-5 col-sm-5 col-xs-12">
+      <form class="form-horizontal" action="index.html" method="post">
+        <section class="formulario">
+          <label  class="col-sm-2 control-label">Medidas</label>
+          <section class="col-sm-10">
+            {{input value=medidas type='text' class="datos-tabla" placeholder="Contorno a medir"}}
+          </section>
+        </section>
+        <section class="formulario">
+          <label  class="col-sm-2 control-label">S:</label>
+          <section class="col-sm-10">
+            {{input value=talleS type='text' class="datos-tabla" placeholder="Medida S"}}
+          </section>
+        </section>
+        <section class="formulario">
+          <label  class="col-sm-2 control-label">M:</label>
+          <section class="col-sm-10">
+            {{input value=talleM type='text' class="datos-tabla" placeholder="Medida M"}}
+          </section>
+        </section>
+        <section class="formulario">
+          <label  class="col-sm-2 control-label">L:</label>
+          <section class="col-sm-10">
+            {{input value=talleL type='text' class="datos-tabla" placeholder="Medida L"}}
+          </section>
+        </section>
+        <section class="formulario">
+          <label  class="col-sm-2 control-label">XL:</label>
+          <section class="col-sm-10">
+            {{input value=talleXL type='text' class="datos-tabla" placeholder="Medida XL"}}
+          </section>
+        </section>
+        <section class="formulario">
+          <section id="js-form-action" class="col-sm-offset-2 col-sm-10">
+            <button type="submit" {{action "create" medidas talleS talleM talleL talleXL}}>Crear</button>
+          </section>
+        </section>
+      </form>
+    </section>
+    <section class="col-md-4 col-sm-4 col-xs-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Medidas</th>
+            <th>S</th>
+            <th>M</th>
+            <th>L</th>
+            <th>XL</th>
+            <th></th>
+        </tr>
+      </thead>
+      <tbody  id="js-tabla">
+        {{#each model.information as |data|}}
+           <tr>
+            <td>{{data.thing.Medidas}}</td>
+            <td>{{data.thing.Talle_S}}</td>
+            <td>{{data.thing.Talle_M}}</td>
+            <td>{{data.thing.Talle_L}}</td>
+            <td>{{data.thing.Talle_XL}}</td>
+            <td><button type="button" {{action "update" data._id}} class="btn btn-default btn-lg"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></button></td>
+            <td><button type="button" {{action "delete" data._id}} class="btn btn-default btn-lg"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
+           </tr>
+        {{/each}}
+      </tbody>
+      </table>
+    </section>
+  </section>
+  </section>
+</article>
+{{outlet}}

@@ -1,0 +1,69 @@
+@font-face {
+   font-family: "Shadows Into Light";
+   src: url("fonts/shadowsintolight.ttf");
+}
+*{
+  font-family: "Shadows Into Light";
+}
+.imagen-oca{
+max-width: 100%;
+}
+#logo_pagina{
+  max-width: 100%;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+.navbar .navbar-collapse {
+  text-align: center;
+}
+p, h1, h2{
+  font-size: 220%;
+  text-align: center;
+}
+h1{
+  font-size: 300%;
+}
+.form-horizontal{
+  font-size: 120%;
+}
+ul{
+  font-size: 160%;
+}
+.checkbox p{
+  font-size: 100%;
+  text-align: left;
+}
+.tabla{
+  margin: 5% 5%;
+}
+.titulo-tabla{
+  margin-bottom: 7%;
+}
+figure, ul li {
+  text-align: center;
+}
+ul{
+  margin: 25px;
+}
+li{
+  list-style: none;
+}
+footer{
+  margin-top: 5%;
+}
+i{
+  margin-left: 25%;
+}
+.imagenes-disenio{
+  max-width: 60%;
+}
+.maniqui{
+  max-width: 100%;
+}
+.invitacion-redes-sociales{
+font-weight: bold;
+}
