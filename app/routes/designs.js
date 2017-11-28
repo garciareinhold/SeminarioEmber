@@ -32,21 +32,28 @@ export default Route.extend({
      this.refresh();
    },
 
-   update(id){
-     this.get('ajax').put('http://web-unicen.herokuapp.com/api/thing/'+id, {
+   revealEdit(data){
+     this.controllerFor('designs').set('edit', true);
+     this.controllerFor('designs').set('fila', Object.assign({}, data));
+   },
+
+   update(){
+     let newFila = this.controllerFor('designs').get('fila');
+     this.get('ajax').put('http://web-unicen.herokuapp.com/api/thing/'+newFila._id, {
         data: {
           group: 12 ,
           thing:{
-            Medidas: data.thing.medidas,
-            Talle_S: data.thing.talleS,
-            Talle_M: data.thing.talleM,
-            Talle_L: data.thing.talleL,
-            Talle_XL: data.thing.talleXL
+            Medidas: newFila.Medidas,
+            Talle_S: newFila.Talle_S,
+            Talle_M: newFila.Talle_M,
+            Talle_L: newFila.Talle_L,
+            Talle_XL: newFila.Talle_XL
           }
         }
       });
+     this.controllerFor('designs').set('edit', false);
      this.refresh();
    }
-}
+ }
 
 });
